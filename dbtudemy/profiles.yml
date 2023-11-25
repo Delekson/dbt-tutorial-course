@@ -1,0 +1,14 @@
+dbtudemy:
+ target: "dev"
+ outputs:
+  dev:
+   type: bigquery
+   method: service-account
+   location: US
+   project: "{{ env_var('BIGQUERY_PROJECT') }}"
+   dataset: thelook_ecommerce
+   threads: 60
+   keyfile: "{{ env_var('KEY_JSON') }}"
+   job_execution_timeout_seconds: 300
+   job_retries: 1
+   priority: interactive

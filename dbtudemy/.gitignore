@@ -1,0 +1,5 @@
+
+target/
+dbt_packages/
+logs/
+dbtudemy-405511-9a934d108d96.json
