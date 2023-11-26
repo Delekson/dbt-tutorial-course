@@ -1,4 +1,4 @@
-WITH source AS (
+with source as (
         select *
         from {{ source('thelook_ecommerce', 'orders') }}
 ),

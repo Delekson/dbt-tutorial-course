@@ -1,0 +1,36 @@
+models:
+  - name: stg_ecommerce__order_items
+    description: "Items ordered associated with orders."
+    columns:
+      - name: order_item_id
+        description: "Unique primary key for an order item."
+        tests:
+          - not_null
+          - unique
+
+      - name: order_id
+        description: "ID number of order the order item is associated with."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_ecommerce_orders')
+              field: 'order_id'
+
+      - name: product_id
+        description: "ID number of product that is ordered."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_ecommerce_products')
+              field: 'product_id'
+
+
+      - name: inventory_item_id
+        description: "ID number of the item sold in inventory."
+        tests:
+          - not_null
+
+      - name: sale_price
+        description: "Price the item is sold at."
+        tests:
+          - not_null

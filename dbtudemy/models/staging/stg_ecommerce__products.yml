@@ -1,0 +1,44 @@
+models:
+  - name: stg_ecommerce__products
+    description: "Products sold on ecommerce site."
+    columns:
+      - name: product_id
+        description: "Unique primary key for product."
+        tests:
+          - not_null
+          - unique
+
+      - name: cost
+        description: "Per unit cost incurred for procuring product."
+        tests:
+          - not_null
+
+      - name: category
+        description: "Category of the product."
+
+      - name: name
+        description: "Full name of the product."
+
+      - name: brand
+        description: "Brand of the product."
+
+      - name: retail_price
+        description: "Retail price the product is sold at."
+        tests:
+          - not_null
+
+      - name: department
+        description: "{{ doc('doc_ecommerce__products___department') }}"
+        tests:
+          - not_null
+          - accepted_values:
+              name: unexpected_department
+              values:
+                - Men
+                - Women
+
+      - name: sku
+        description: "SKU code for the product."
+
+      - name: distribution_center_id
+        description: "ID of the distribution center the product is distributed from."
