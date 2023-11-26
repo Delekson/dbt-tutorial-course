@@ -9,7 +9,16 @@ sources:
     dataset: thelook_ecommerce
     tables:
       - name: inventory_items
+        description: "Inventory item list."
       - name: order_items
+        description: "Items ordered associated with orders."
       - name: orders
+        description: "Orders received on ecommerce site."
       - name: products
-      - name: users 
+        description: "Products sold on ecommerce site."
+      - name: users
+        description: "Users registered on ecommerce site."
+      - name: distribution_centers
+        description: "Distribution centers used by ecommerce site."
+      - name: events
+        description: "All events that occur on ecommerce site."
